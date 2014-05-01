@@ -1,4 +1,4 @@
-show
+Sowhat
 ====
 
-Craft your deck with markdown and then show. More at http://show.amitkaps.com
+Craft your deck with markdown and then answer the sowhat. More at http://sowhat.amitkaps.com
