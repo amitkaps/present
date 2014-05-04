@@ -57,6 +57,11 @@ window.onload = function () {
 	        if (key.which === 37 || key.which === 38) prev();
 	    };
 
+	  // Prevent entire screen scrolling
+	  document.ontouchmove = function(touch) {
+	  	touch.preventDefault()
+	  };  
+
 		// Touch control based on start and end touch x coordinates
     document.ontouchstart = function(touch) {
       var xStartCoordinate = touch.changedTouches[0].pageX;
