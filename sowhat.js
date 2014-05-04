@@ -2,7 +2,6 @@
 
 // Wait for the html content to load and then start
 window.onload = function () {
-
 	
 	// SETUP & SHOW - Show the current slide
 		
