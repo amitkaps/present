@@ -1,0 +1,71 @@
+* { 
+  box-sizing: border-box;
+}
+
+html{
+	height: 100%;
+}
+
+body {
+	background-color: whitesmoke;
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	font-size: 1em;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+
+.full-height {
+	height: 100%;
+}
+
+textarea {
+	height: 100%;
+	font-size: 1em;
+}
+
+.main {
+	background-color: white;
+	float: left;
+	width: 60%;
+	height: 100%;
+	border-right: 1px solid darkgrey;
+	padding: 20px;
+	overflow: hidden;
+}
+
+.show {
+	float: right;
+	width: 40%;
+	height: 100%;
+	padding: 20px;
+	overflow: hidden;
+}
+
+
+#markdown {
+	display: block;
+	width: 100%;
+	resize:none;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+#markdown:focus {
+	outline: none;
+}
+
+#html {
+	display: block;
+	width: 400px;
+	height: 300px;
+	overflow: hidden;
+	margin: 0 auto;
+	padding: 10px;
+	border: 1px solid darkgrey;
+}
+

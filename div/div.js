@@ -2,43 +2,11 @@
 
 // Wait for the html content to load and then start
 window.onload = function () {
-
-	// Get html id tags
-	var html = document.getElementById("html");
 	
-	// Set option for block level renderer in marked.js
-	// Convert hr (---) into div in the html
-	var myRenderer = new marked.Renderer();
-	myRenderer.hr = function () {
-			return '</div> <div>';
-	}
-
-	// Get markdown using AJAX, convert to html, and wrap in a div
-	// Get markdown text using AJAX
-	var request = new XMLHttpRequest();
-	request.open('GET', 'sowhat.md', true);
-	request.onreadystatechange = function() {
-	  if (this.readyState === 4){
-	    if (this.status >= 200 && this.status < 400){
-	      // Success!
-	      console.log(this.responseText)
-	      html.innerHTML = '<div>' +
-	      	marked(this.responseText, {renderer: myRenderer}) + 
-	      	'</div>';
-	    } else {
-	      // Error :(
-	      console.log("Error getting sowhat.md")	
-	    }
-	  }
-	};
-	request.send();
-	request = null;
-
 	// SETUP & SHOW - Show the current slide
 		
-	// Get an array of all the div (slides) to show.
+	// Get an array of all the divs (slides) to show.
 	var slides = document.getElementsByTagName('div');
-
 
 	// Set the show slide number to zero.
 	var onSlide = 0;
@@ -136,5 +104,6 @@ window.onload = function () {
 
   // Show the current slide.
 	show(onSlide);
+
 
 };

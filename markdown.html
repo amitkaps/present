@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>SoWhAt</title>
+    <meta name="description" content="Craft your deck. Answer the SoWhAt">
+    <meta name="viewport" content="width=device-width, 
+          initial-scale=1, maximum-scale=1, user-scalable=0">
+    <link rel="stylesheet" href="mark.css">
+  </head>
+  
+  <body>
+    <div class="main">
+      <div class="full-height">
+        <textarea id="markdown" oninput="this.editor.update()"
+             placeholder="Write Markdown">
+# SoWhAt
+
+---
+
+## Craft your deck. Answer the SoWhAt.
+More at [sowhat.amitkaps.com](http://sowhat.amitkaps.com)
+
+---
+
+## Strong opinions, Weakly held, Acted thoughtfully.
+
+---
+
+> Drink your tea slowly and reverently, as if it is the axis 
+on which the whole earth revolves - slowly, evenly, without rushing 
+toward the future. Live the actual moment. Only this actual moment 
+is life.
+
+---
+
+
+> The right attitude for learning and creativity is to 
+> “argue as if you are right and listen as if you are wrong,” which 
+> strikes me as the right path for developing “strong opinions, 
+> weakly held. 
+
+---
+
+> Remember: when people tell you something’s wrong or doesn’t
+> work for them, they are almost always right. When they tell you exactly
+> what they think is wrong and how to fix it, they are almost always 
+> wrong. 
+        </textarea>
+      </div>
+    </div>
+              
+    <div class="show">
+      <pre> <code id="html"> 
+      </code> </pre>
+    </div>  
+    
+
+    <script src="marked.js"></script>
+
+
+    <script>
+      markdown = document.getElementById("markdown");  
+      html = document.getElementById("html");
+
+      function Convert(input, output) {
+        this.update = function () {
+          output.innerHTML = marked(input.value);
+          console.log(output.innerHTML);
+        };
+
+        input.editor = this;
+        this.update();
+      }
+
+      new Convert(markdown, html);
+    </script>
+  </body>
+</html>
