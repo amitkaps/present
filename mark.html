@@ -51,28 +51,17 @@ is life.
     </div>
               
     <div class="show">
-      <pre> <code id="html"> 
+      <pre> <code id="sowhat"> 
       </code> </pre>
+
+      <button> Full Screen </button>
     </div>  
+
+
     
 
     <script src="lib/marked.js"></script>
+    <script src="mark.js"></script>
 
-    <script>
-      markdown = document.getElementById("markdown");  
-      html = document.getElementById("html");
-
-      function Convert(input, output) {
-        this.update = function () {
-          output.innerHTML = marked(input.value);
-          console.log(output.innerHTML);
-        };
-
-        input.editor = this;
-        this.update();
-      }
-
-      new Convert(markdown, html);
-    </script>
   </body>
 </html>

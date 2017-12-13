@@ -2,7 +2,7 @@
 
 // Wait for the html content to load and then start
 window.onload = function () {
-	
+
 	// Set option for block level renderer in marked.js
 	// Convert hr (---) into div in the html
 	var myRenderer = new marked.Renderer();
@@ -13,12 +13,12 @@ window.onload = function () {
 	// Convert markdown to html, and wrap in a div
 	var markdown = document.getElementById("markdown");
 	var html = document.getElementById("html");
-	html.innerHTML = '<div>' + 
+	html.innerHTML = '<div>' +
 										marked(markdown.textContent, {renderer: myRenderer})
 										+ '</div>';
 
 	// SETUP & SHOW - Show the current slide
-		
+
 	// Get an array of all the div (slides) to show.
 	var slides = document.getElementsByTagName('div');
 
@@ -30,7 +30,7 @@ window.onload = function () {
 	if (!slides) return;
 
 	// Show the slide number n.
-	
+
 	function show(n) {
 
 		// Set show slide and onSlide number to n.
@@ -47,7 +47,7 @@ window.onload = function () {
 
 		// Update the hash on the url
 		if (window.location.hash !== onSlide) {
-			window.location.hash = onSlide;	
+			window.location.hash = onSlide;
 		}
 
 	}
@@ -55,7 +55,7 @@ window.onload = function () {
 
 	// CONTROLS - Move the Slides
 
-	// On click, show the next slide. Cycle back to start. 
+	// On click, show the next slide. Cycle back to start.
 	document.onclick = function () {
 		onSlide = (onSlide + 1) % slides.length;
 		show(onSlide);
@@ -82,7 +82,7 @@ window.onload = function () {
   // Prevent entire screen scrolling on touch device
   document.ontouchmove = function(touch) {
   	touch.preventDefault();
-  };  
+  };
 
 	// Touch control based on start and end touch x coordinates
 	document.ontouchstart = function(touch) {
@@ -95,8 +95,8 @@ window.onload = function () {
   };
 
 	// HASH - Show hash in url to navigate through the url bar.
-  
-  // Get the current hash for the url 
+
+  // Get the current hash for the url
   // Minimum 0, Maximum is total no. of slides - 1
   // window.location.hash gives you the hash e.g. #3
   // .substring(1) gives you e.g. only 3
@@ -107,10 +107,10 @@ window.onload = function () {
       	parseInt(window.location.hash.substring(1), 10)
       ), 0 );
   }
-  
+
   // If no hash exists, then set it now.
   if (window.location.hash) onSlide = get_hash() || onSlide;
-  
+
   // If hash changes in the url, then change the slide
   window.onhashchange = function() {
       var currentHash = get_hash();

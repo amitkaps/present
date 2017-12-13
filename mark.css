@@ -59,11 +59,13 @@ textarea {
 	outline: none;
 }
 
-#html {
+#sowhat {
 	display: block;
 	width: 400px;
 	height: 300px;
 	overflow: hidden;
+	white-space: pre-line;
+	word-wrap: break-word;
 	margin: 0 auto;
 	padding: 10px;
 	border: 1px solid darkgrey;
